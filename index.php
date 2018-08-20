@@ -6,10 +6,24 @@
   </head>
   <body>
     <!-- exo04-6/?language=PHP&server=LAMP -->
+    <p>
       <?php
-        if (isset($_GET['language']) && isset($_GET['server'])) {
-        echo $_GET['language'] . ' ' . $_GET['server'];
+      //!empty -> vérifie que la variable existe et n'est pas vide
+        if (!empty($_GET['language'])) {
+        echo $_GET['language'] . ' ';
+      } else {
+        echo 'Il manque le paramètre language';
       }
       ?>
+      <br />
+      <br />
+      <?php
+        if (!empty($_GET['server'])) {
+        echo $_GET['server'];
+      } else {
+        echo 'Il manque le paramètre server';
+      }
+      ?>
+    </p>
   </body>
 </html>
